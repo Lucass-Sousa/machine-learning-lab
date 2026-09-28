@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
 
-import { RoutePlaceholder } from "@/components/navigation/RoutePlaceholder";
+import { FreeLabExperience } from "@/components/laboratory/FreeLabExperience";
+import { SiteShell } from "@/components/layout/SiteShell";
 
 export const metadata: Metadata = {
   title: "Laboratório Livre",
+  description:
+    "Experimente regressão linear, polinomial e logística escolhendo dados e variáveis livremente.",
 };
 
 export default function LaboratoryPage() {
   return (
-    <RoutePlaceholder
-      eyebrow="Experimentação"
-      title="Laboratório Livre"
-      description="O espaço de experimentação livre ainda está sendo estruturado. Em breve você poderá escolher dados, variáveis e modelos sem uma trilha guiada."
-    />
+    <SiteShell showFooter={false}>
+      <main className="flex min-h-[calc(100dvh-3.5rem)] flex-col">
+        <FreeLabExperience />
+      </main>
+    </SiteShell>
   );
 }
