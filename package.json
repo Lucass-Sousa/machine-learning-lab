@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate:ml": "PYTHONPATH=. python3 -m python.linear_regression.validation",
+    "validate:ml:example": "PYTHONPATH=. python3 -m python.linear_regression.validation --file python/examples/payload.normal_equation.json"
   },
   "dependencies": {
     "next": "16.3.6",

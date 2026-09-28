@@ -25,10 +25,6 @@ export function LabControls({
   onInterceptChange,
   className,
 }: LabControlsProps) {
-  const careers = Array.from(
-    new Set(dataset.records.map((record) => record.career)),
-  ).sort();
-
   return (
     <div className={cn("flex flex-col gap-6", className)}>
       <div className="flex flex-col gap-2">
@@ -40,20 +36,22 @@ export function LabControls({
           </p>
           <dl className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-xs">
             <div>
-              <dt className="text-muted">Registros</dt>
+              <dt className="text-muted">Registros (fonte)</dt>
               <dd className="font-mono tabular-nums text-foreground">
-                {dataset.records.length}
+                {dataset.recordCount}
               </dd>
             </div>
             <div>
-              <dt className="text-muted">Eixos</dt>
+              <dt className="text-muted">Eixos atuais</dt>
               <dd className="text-foreground">
                 {dataset.xLabel} × {dataset.yLabel}
               </dd>
             </div>
             <div className="col-span-2">
-              <dt className="text-muted">Cursos</dt>
-              <dd className="mt-0.5 text-foreground">{careers.join(", ")}</dd>
+              <dt className="text-muted">Fonte</dt>
+              <dd className="mt-0.5 font-mono text-foreground">
+                {dataset.source}
+              </dd>
             </div>
           </dl>
         </div>
@@ -93,8 +91,8 @@ export function LabControls({
           Status
         </p>
         <p className="mt-1 text-sm leading-relaxed text-foreground">
-          Dataset de gamificação carregado. Algoritmos de ML ainda não
-          conectados.
+          Dataset de crédito carregado. Use a trilha de Regressão Linear para a
+          experiência completa.
         </p>
       </div>
     </div>

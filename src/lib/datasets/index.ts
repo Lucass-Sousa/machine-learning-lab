@@ -1,10 +1,6 @@
-export type {
-  Dataset,
-  DatasetId,
-  GamificationAssessmentRecord,
-} from "./types";
+export type { Dataset, DatasetId } from "@/lib/data/types";
 export {
   DEFAULT_DATASET,
   getDefaultDataset,
   sampleDatasetPoints,
-} from "./gamification";
+} from "./credit";

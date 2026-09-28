@@ -13,6 +13,7 @@ type SliderProps = {
   disabled?: boolean;
   onChange?: (value: number) => void;
   hint?: string;
+  displayValue?: string;
 };
 
 /**
@@ -30,6 +31,7 @@ export function Slider({
   disabled = false,
   onChange,
   hint,
+  displayValue,
 }: SliderProps) {
   return (
     <div className="flex flex-col gap-2">
@@ -38,7 +40,7 @@ export function Slider({
           {label}
         </label>
         <span className="font-mono text-sm tabular-nums text-muted">
-          {value}
+          {displayValue ?? value}
           {unit ? ` ${unit}` : null}
         </span>
       </div>

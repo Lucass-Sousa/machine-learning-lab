@@ -8,20 +8,55 @@ export type {
   Point2D,
 } from "./types";
 
-export type {
-  LinearFitResult,
-  LinearParameters,
-  Residual,
-} from "./linear-regression/types";
-
 export {
   computeResiduals,
-  createTrainingFrames,
+  crossValidateLinearRegression,
   evaluateLinearModel,
   fitLinearRegression,
-  meanAbsoluteError,
-  meanSquaredError,
   predictLinear,
+  runGradientDescent,
+  type GradientDescentFrame,
+  type GradientDescentOptions,
+  type GradientDescentResult,
+  type LinearFitResult,
+  type LinearParameters,
+  type Residual,
 } from "./linear-regression";
 
-export const ML_MODULE_STATUS = "linear-regression" as const;
+export { meanAbsoluteError, meanSquaredError } from "./metrics";
+
+export {
+  buildNormalization,
+  computeScaleStats,
+  inverseZScore,
+  zScore,
+  type NormalizationTransform,
+  type ScaleStats,
+} from "./normalize";
+
+export {
+  createRng,
+  kFoldIndices,
+  shuffleIndices,
+  trainTestSplit,
+  trainValTestSplit,
+  type FoldResult,
+  type TrainTestSplit,
+} from "./split";
+
+export {
+  computeLearningCurve,
+  computePolynomialResiduals,
+  describeFeatures,
+  diagnoseGeneralization,
+  evaluatePolynomialModel,
+  fitPolynomialRegression,
+  formatPolynomialFormula,
+  polynomialFeatures,
+  predictPolynomial,
+  samplePolynomialCurve,
+  scaleFeature,
+  type LearningCurvePoint,
+  type PolynomialFitResult,
+  type PolynomialModel,
+} from "./polynomial-regression";
