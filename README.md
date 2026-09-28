@@ -13,6 +13,17 @@ npm run dev
 
 Abra [http://localhost:3000](http://localhost:3000).
 
+## Deploy (GitHub Pages)
+
+O site é exportado estaticamente (`output: "export"`).
+
+- Workflow: `.github/workflows/deploy-pages.yml` (push em `main`)
+- URL esperada: https://lucass-sousa.github.io/machine-learning-lab/
+- Build local com basePath do Pages: `npm run build:pages`
+- Em **Settings → Pages**, source = **GitHub Actions**
+
+A validação Python via HTTP não roda no Pages (sem servidor). Use `npm run validate:ml` localmente.
+
 ## Datasets
 
 ### Regressão (`base_credito`)

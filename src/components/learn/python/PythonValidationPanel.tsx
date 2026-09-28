@@ -39,11 +39,15 @@ export function PythonValidationPanel({
     setReport(null);
 
     try {
-      const response = await fetch("/api/validate/linear-regression", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+      const response = await fetch(
+        `${basePath}/api/validate/linear-regression`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        },
+      );
       const json = (await response.json()) as ValidationReport;
       setReport(json);
     } catch (error) {
@@ -52,7 +56,7 @@ export function PythonValidationPanel({
         available: false,
         error: error instanceof Error ? error.message : "Erro de rede",
         message:
-          "Não foi possível contactar o validador. O lab continua funcionando sem Python.",
+          "Validação HTTP indisponível neste deploy estático (GitHub Pages). Use `npm run validate:ml` localmente — o lab continua funcionando sem Python.",
       });
     } finally {
       setLoading(false);
