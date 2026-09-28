@@ -10,7 +10,7 @@ export type VariableDefinition = {
   selectable: boolean;
 };
 
-export type DatasetId = "base-credito";
+export type DatasetId = "base-credito" | "base-classificacao";
 
 /**
  * Catalog entry — prepared for multiple datasets later.

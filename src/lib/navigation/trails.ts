@@ -17,6 +17,9 @@ export type Trail = {
   description: string;
   category: TrailCategory;
   accent: TrailAccent;
+  /** When false, card is visible but not navigable. */
+  available?: boolean;
+  unavailableLabel?: string;
 };
 
 export const LEARNING_TRAILS: Trail[] = [
@@ -50,11 +53,13 @@ export const LEARNING_TRAILS: Trail[] = [
   {
     id: "clustering",
     href: "/learn/clustering",
-    title: "Clustering",
+    title: "Clusterização",
     description:
       "Descubra como algoritmos podem encontrar grupos em dados sem categorias previamente definidas.",
     category: "Aprendizado não supervisionado",
     accent: "slate",
+    available: false,
+    unavailableLabel: "Em breve",
   },
 ];
 

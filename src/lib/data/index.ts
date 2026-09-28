@@ -27,3 +27,20 @@ export {
 } from "@/lib/data/credit/observations";
 
 export { CREDIT_VARIABLES, CREDIT_DATASET_META } from "@/lib/data/credit/schema";
+
+export {
+  getBinaryClassificationRows,
+  getClassificationDatasetInfo,
+  getClassificationObservations,
+  getMulticlassClassificationRows,
+  type BinaryClassificationRow,
+  type ClassificationObservation,
+  type MulticlassClassificationRow,
+} from "@/lib/data/classification/observations";
+
+export {
+  BINARY_TARGET,
+  CLASSIFICATION_DATASET,
+  CLASSIFICATION_VARIABLES,
+  MULTICLASS_TARGET,
+} from "@/lib/data/classification/schema";
